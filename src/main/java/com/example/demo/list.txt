@@ -1,0 +1,10 @@
+error handling
+proper response type
+swwager
+redis (dregonfly) (multiple instances or DB)
+mail
+device info propar in redis
+slf4j setup
+username end point store in redis by bloom filter
+
+session handling
