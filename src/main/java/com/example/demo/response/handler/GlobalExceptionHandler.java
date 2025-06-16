@@ -1,7 +1,8 @@
-package com.example.demo.response;
+package com.example.demo.response.handler;
 
+import com.example.demo.response.factory.ApiResponseFactory;
 import com.example.demo.response.exceptions.BaseException;
-import com.example.demo.response.response.StandardApiResponse;
+import com.example.demo.response.model.StandardApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

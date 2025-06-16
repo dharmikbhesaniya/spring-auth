@@ -1,6 +1,6 @@
-package com.example.demo.response;
+package com.example.demo.response.factory;
 
-import com.example.demo.response.response.StandardApiResponse;
+import com.example.demo.response.model.StandardApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
