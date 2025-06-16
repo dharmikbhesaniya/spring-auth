@@ -18,10 +18,6 @@ import org.hibernate.annotations.Where;
 @Where(clause = "is_deleted = false")
 public class UserEntity extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
     @Column(nullable = false)
     private String email;
 
