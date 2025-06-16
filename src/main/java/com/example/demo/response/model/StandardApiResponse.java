@@ -9,13 +9,12 @@ import java.time.LocalDateTime;
 @Getter
 @Builder
 public class StandardApiResponse<T> {
-    private final T payload;
-    private final String message;
-    private final int statusCode;
-    private final boolean success;
-    private final String path;
+  private final T payload;
+  private final String message;
+  private final int statusCode;
+  private final boolean success;
+  private final String path;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private final LocalDateTime timestamp;
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private final LocalDateTime timestamp;
 }
-

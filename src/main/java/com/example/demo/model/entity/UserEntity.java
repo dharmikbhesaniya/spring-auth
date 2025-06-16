@@ -5,38 +5,36 @@ import com.example.demo.utils.enums.UserRoleEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "app_user")
+@Table(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@SQLDelete(sql = "UPDATE user SET is_deleted = true WHERE id = ?")
-@Where(clause = "is_deleted = false")
 public class UserEntity extends BaseEntity {
 
-    @Column(nullable = false)
-    private String email;
+  @Column(nullable = false)
+  private String email;
 
-    @Column(unique = true, nullable = false)
-    private String username;
+  @Column(unique = true, nullable = false)
+  private String username;
 
-    @Column(nullable = false)
-    private String password;
+  @Column(nullable = false)
+  private String password;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private UserRoleEnum role;
+  @Enumerated(EnumType.STRING)
+  @Column(nullable = false)
+  private UserRoleEnum role;
 
-    @Column(nullable = false)
-    private String firstName;
+  @Column(nullable = false)
+  private String firstName;
 
-    @Column(nullable = false)
-    private String lastName;
+  @Column(nullable = false)
+  private String lastName;
 
-    @Column(nullable = false)
-    private Boolean enabled = true;
+  @Column(nullable = false)
+  private Boolean enabled = true;
 }
