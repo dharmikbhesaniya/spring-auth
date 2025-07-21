@@ -1,5 +1,6 @@
 package com.example.demo.model.entity.base;
 
+import jakarta.persistence.PostPersist;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreRemove;
 import jakarta.persistence.PreUpdate;
@@ -9,6 +10,11 @@ public class EntityAuditListener {
   @PrePersist
   public void prePersist(Object entity) {
     System.out.println("Before creating: " + entity.getClass().getSimpleName());
+  }
+
+  @PostPersist
+  public void postPersist(Object entity) {
+    System.out.println("Post creating: " + entity.getClass().getSimpleName());
   }
 
   @PreUpdate

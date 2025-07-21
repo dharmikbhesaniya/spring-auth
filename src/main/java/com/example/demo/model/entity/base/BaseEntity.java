@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -15,16 +16,16 @@ import java.util.UUID;
 @Setter
 @ToString
 @EntityListeners({AuditingEntityListener.class, EntityAuditListener.class})
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-@SQLDelete(
-    sql =
-        "UPDATE #{#entityName} SET is_deleted = true, soft_deleted_at = CURRENT_TIMESTAMP WHERE id = ? AND version = ?")
+//@SQLDelete(
+//    sql =
+//        "UPDATE #{#entityName} SET is_deleted = true, soft_deleted_at = CURRENT_TIMESTAMP WHERE id = ? AND version = ?")
 //@FilterDef(name = "deletedFilter", defaultCondition = "is_deleted = false")
 //@Filter(name = "deletedFilter")
-@Where(clause = "is_deleted = false")
-public abstract class BaseEntity {
+//@Where(clause = "is_deleted = false")
+public abstract class BaseEntity  {
 
   @Id
   @EqualsAndHashCode.Include
